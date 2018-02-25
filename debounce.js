@@ -1,11 +1,11 @@
 function debounce(func, delay){
-		var timer;
+	var timer;
     
-		return function(){
-			var self = this;
-			var args = arguments;
+	return function(){
+		var self = this;
+		var args = arguments;
 			
-			window.clearTimeout(timer);
-			timer = window.setTimeout(function(){func.apply(self, args)},delay);
-		}
+		window.clearTimeout(timer);
+		timer = window.setTimeout(function(){func.apply(self, args)},delay);
 	}
+}
