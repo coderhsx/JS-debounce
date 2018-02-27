@@ -41,3 +41,19 @@ function throttle(func, interval){
 		}
 	}
 }
+
+
+/*
+ * es5数组去重
+ * array array 需要去重的数组
+ */
+ function unique(array){
+	var isPushedNaN = false; 
+ 	return array.filter(function(item,index){
+		if(!(item === item) && !isPushedNaN){//修正NaN不能被添加进数组
+			return isPushedNaN = true;
+		}
+ 		else return index === array.lastIndexOf(item);
+
+ 	})
+ }
