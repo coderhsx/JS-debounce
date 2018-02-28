@@ -44,7 +44,7 @@ function throttle(func, interval){
 
 
 /*
- * es5数组去重
+ * ES5数组去重
  * array array 需要去重的数组
  */
  function unique(array){
@@ -56,4 +56,14 @@ function throttle(func, interval){
  		else return index === array.lastIndexOf(item);
 
  	})
+ }
+
+
+/*
+ * ES6数组去重
+ * array array 需要去重的数组
+ */
+
+ function unique(array){
+	return [...new Set(array)];
  }
