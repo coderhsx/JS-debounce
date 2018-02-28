@@ -3,6 +3,7 @@
  *  func function 需要执行事件的函数
  *  [,delay] string  停止触发该事件后执行该事件的延迟时间
  *  [,isImmediate] boolean 是否在首次触发事件时执行一次该事件，只有当设置为true时，func才会返回其值。
+ *  返回值：function
  */
 function debounce(func, delay, isImmediate){
 	var timer;//定时器句柄
@@ -27,6 +28,7 @@ function debounce(func, delay, isImmediate){
  *  事件节流：当持续触发事件时，每间隔一段时间执行该事件
  *  func function 需要执行事件的函数
  *  interval string  间隔时间
+ *  返回值：function
  */
 function throttle(func, interval){
 	var timer;//定时器句柄
@@ -46,6 +48,7 @@ function throttle(func, interval){
 /*
  * ES5数组去重
  * array array 需要去重的数组
+ * 返回值：array
  */
  function unique(array){
 	var isPushedNaN = false; 
@@ -62,8 +65,20 @@ function throttle(func, interval){
 /*
  * ES6数组去重
  * array array 需要去重的数组
+ * 返回值：array
  */
-
  function unique(array){
 	return [...new Set(array)];
  }
+
+
+/*
+ * 获取数据类型
+ * arg 任意数据类型  
+ * 返回值：string
+ */
+ function getType(arg){
+ 	//[object Number] [object String] [object Boolean] [object Undefined] [object Null] [object Object] 
+	//[object Array] [object Date] [object Error] [object RegExp] [object Function]。返回其中之一
+	return Object.prototype.toString.call(arg);
+}
